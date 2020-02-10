@@ -71,45 +71,65 @@
 // Inheritance
 // Objective 1
 class Vehicle {
-    constructor(model, manufacturer , numWheels) {
+    constructor(model, manufacturer, numWheels) {
         this.model = model;
-        this.manufacturer  = manufacturer;
+        this.manufacturer = manufacturer;
         this.numWheels = numWheels;
     }
-// Objective 2
+    // Objective 2
     aboutVehicle() {
         console.log(`This vehicle is ${this.model}, manufactured by  ${this.manufacturer}, and has ${this.numWheels}.`);
     }
 
 }
 // Objective 3
-class VehicleClass extends Vehicle{
-    constructor(numDoors, truckBed){
-        super(numWheels);
-        this.numDoors  = numDoors;
+class Truck extends Vehicle {
+    constructor(model, manufacturer, numWheels, numDoors, truckBed) {
+        super(model, manufacturer, numWheels);
+        this.numDoors = numDoors;
         this.truckBed = truckBed;
+    }
+    aboutTruck() {
+        console.log(`I have ${this.numDoors} doors and ${this.truckBed} truckbed.`)
     }
 }
 
 // Objective 4
-class Sedan extends Vehicle{
-    constructor(size, mpg ){
+class Sedan extends Vehicle {
+    constructor(model, manufacturer, numWheels, size, mpg) {
+        super(model, manufacturer, numWheels)
         this.size = size;
-        this.mpg  = mpg;
+        this.mpg = mpg;
     }
+    aboutSedans() {
+        console.log(`I am ${this.size} and I get ${this.mpg} MPG.`)
+    }
+
 }
 
 // Objective 5
-class Motorcycles extends Vehicle{
-    constructor(handlebars , noDoors ){
-        super();
+class Motorcycles extends Vehicle {
+    constructor(model, manufacturer, numWheels, handlebars, noDoors) {
+        super(model, manufacturer, numWheels);
         this.handlebars = handlebars;
-        this.noDoors  = noDoors;
+        this.noDoors = noDoors;
+    }
+    aboutMotorcycles() {
+        console.log(`I have ${this.handlebars} and ${this.noDoors}`)
     }
 }
 
 // Objective 6
-// let p5 = new Person('Janey', 'Alabaster, AL', 25);
-// p5.sayHello();
+var1 = new Truck(`Siverado`, `Chevy`, `4`, `2`, `1`);
+var1.aboutVehicle();
+var1.aboutTruck();
+
+var2 = new Sedan(`Malibu`, `Chevy`, `4`, `small`, `33`);
+var2.aboutVehicle();
+var2.aboutSedans();
+
+var3 = new Motorcycles(`Runner`, `Indian`, `2`, `handlebars`, `no doors`);
+var3.aboutVehicle();
+var3.aboutMotorcycles();
 
 
